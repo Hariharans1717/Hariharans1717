@@ -1,9 +1,14 @@
 <div align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=0:0ea5e9,50:6366f1,100:a855f7&height=220&section=header&text=Hi%20there,%20I'm%20Hariharan%20S%20👋&fontSize=38&fontColor=ffffff&animation=fadeIn&fontAlignY=38&desc=Full-Stack%20Developer%20%7C%20AI%20%26%20Prompt%20Engineering%20Enthusiast&descAlignY=58&descAlign=50" width="100%" alt="Header Banner" />
+  <!-- Ultra-Modern Animated Hero Banner Card -->
+  <a href="https://github.com/Hariharans1717">
+    <img src="./assets/header-banner.svg" width="100%" alt="Hariharan S - Full-Stack Developer & AI Engineer Banner" />
+  </a>
+
+  <br/><br/>
 
   <!-- Animated Typing SVG -->
   <a href="https://github.com/Hariharans1717">
-    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=20&duration=3000&pause=1000&color=38BDF8&center=true&vCenter=true&width=650&height=50&lines=Full-Stack+Developer+(MERN+%26+PERN);AI+Enthusiast+%26+Prompt+Engineer;Building+Impactful+Web+%26+Mobile+Solutions;Software+Engineer+Intern+%40+Invictus+Tec;B.Tech+IT+%40+Nandha+Engineering+College" alt="Typing SVG" />
+    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=20&duration=3000&pause=1000&color=00F2FE&center=true&vCenter=true&width=700&height=50&lines=Full-Stack+Developer+(MERN+%26+PERN);Software+Engineer+Intern+%40+Invictus+Tec;AI+Enthusiast+%26+Prompt+Engineer;Building+Impactful+Web+%26+Mobile+Solutions;B.Tech+IT+%40+Nandha+Engineering+College" alt="Typing SVG" />
   </a>
 
   <p align="center">
@@ -14,7 +19,7 @@
   </p>
 
   <p align="center">
-    <img src="https://komarev.com/ghpvc/?username=Hariharans1717&label=Profile%20Views&color=6366f1&style=flat-square" alt="Profile Views" />
+    <img src="https://komarev.com/ghpvc/?username=Hariharans1717&label=Profile%20Views&color=00F2FE&style=flat-square" alt="Profile Views" />
     <img src="https://img.shields.io/badge/Location-Tamil%20Nadu%2C%20India-blue?style=flat-square&logo=googlemaps&logoColor=white" alt="Location" />
     <img src="https://img.shields.io/badge/Status-Open%20to%20Opportunities-success?style=flat-square" alt="Status" />
   </p>
