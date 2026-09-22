@@ -1,5 +1,4 @@
 const fs = require('fs');
-const path = require('path');
 
 const avatarPath = 'C:\\Users\\harij\\.gemini\\antigravity-ide\\brain\\b17ca329-4087-45e8-8d97-b51943e9f212\\developer_avatar_1790099870884.jpg';
 const targetSvgPath = 'c:\\Users\\harij\\Desktop\\github_profile\\Hariharans1717\\assets\\header-banner.svg';
@@ -18,10 +17,10 @@ const svgContent = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 440
 
       /* Keyframe Animations */
       @keyframes borderGlow {
-        0% { stroke: #00F2FE; }
-        33% { stroke: #a855f7; }
-        66% { stroke: #ec4899; }
-        100% { stroke: #00F2FE; }
+        0% { stroke: #00F2FE; filter: drop-shadow(0 0 4px #00F2FE); }
+        33% { stroke: #a855f7; filter: drop-shadow(0 0 4px #a855f7); }
+        66% { stroke: #ec4899; filter: drop-shadow(0 0 4px #ec4899); }
+        100% { stroke: #00F2FE; filter: drop-shadow(0 0 4px #00F2FE); }
       }
 
       @keyframes float1 {
@@ -69,6 +68,12 @@ const svgContent = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 440
         0% { transform: translate(0, 0); opacity: 0.2; }
         50% { transform: translate(12px, -12px); opacity: 0.8; }
         100% { transform: translate(0, 0); opacity: 0.2; }
+      }
+
+      @keyframes scanline {
+        0% { transform: translateY(-100px); opacity: 0; }
+        50% { opacity: 0.4; }
+        100% { transform: translateY(100px); opacity: 0; }
       }
 
       /* Animated Classes */
@@ -160,8 +165,9 @@ const svgContent = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 440
       <rect width="920" height="440" rx="24" ry="24" />
     </clipPath>
 
-    <clipPath id="avatarClip">
-      <circle cx="690" cy="210" r="92" />
+    <!-- Futuristic Cyber Octagon Avatar Clip Path (Not Round!) -->
+    <clipPath id="cyberOctagonClip">
+      <polygon points="620,115 760,115 785,140 785,280 760,305 620,305 595,280 595,140" />
     </clipPath>
 
     <!-- Filters -->
@@ -251,11 +257,12 @@ const svgContent = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 440
       </g>
     </g>
 
-    <!-- RIGHT SECTION: AVATAR HUD & SKILL NODES -->
+    <!-- RIGHT SECTION: FUTURISTIC CYBER OCTAGON AVATAR FRAME & SKILL NODES -->
+    <!-- Rotating Cyber Orbit Ring around Octagon -->
     <g transform="translate(0, 0)">
-      <circle cx="690" cy="210" r="132" fill="none" stroke="#38bdf8" stroke-opacity="0.3" stroke-width="1.5" stroke-dasharray="8 12" class="ring-rotate1" />
-      <circle cx="690" cy="210" r="150" fill="none" stroke="#a855f7" stroke-opacity="0.25" stroke-width="1" stroke-dasharray="4 20" class="ring-rotate2" />
-      <path d="M 690 65 L 690 75 M 690 345 L 690 355 M 545 210 L 555 210 M 825 210 L 835 210" stroke="#38bdf8" stroke-width="2" stroke-opacity="0.6" />
+      <polygon points="610,98 770,98 800,128 800,292 770,322 610,322 580,292 580,128" fill="none" stroke="#38bdf8" stroke-opacity="0.3" stroke-width="1.5" stroke-dasharray="10 15" class="ring-rotate1" />
+      <polygon points="602,88 778,88 812,122 812,298 778,332 602,332 568,298 568,122" fill="none" stroke="#a855f7" stroke-opacity="0.2" stroke-width="1" stroke-dasharray="6 24" class="ring-rotate2" />
+      <path d="M 690 60 L 690 75 M 690 345 L 690 360 M 540 210 L 555 210 M 825 210 L 840 210" stroke="#00F2FE" stroke-width="2" stroke-opacity="0.7" />
     </g>
 
     <!-- CONNECTOR LASER LINES -->
@@ -279,12 +286,28 @@ const svgContent = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 440
       <path d="M 685 305 L 675 360" stroke="#4ae387" stroke-opacity="0.9" class="laser-line" />
     </g>
 
-    <!-- AVATAR PORTRAIT -->
-    <g transform="translate(690, 210)" filter="url(#shadow)">
-      <circle cx="0" cy="0" r="102" fill="none" stroke="url(#avatarGlow)" stroke-width="3" stroke-opacity="0.9" />
-      <circle cx="0" cy="0" r="95" fill="#090d16" stroke="#1e293b" stroke-width="2" />
-      <image href="data:image/jpeg;base64,${b64}" x="-92" y="-92" width="184" height="184" clip-path="url(#avatarClip)" preserveAspectRatio="xMidYMid slice" />
-      <circle cx="0" cy="0" r="92" fill="none" stroke="#38bdf8" stroke-opacity="0.5" stroke-width="1.5" />
+    <!-- AVATAR CONTAINER: CYBER OCTAGON FRAME (NOT ROUND!) -->
+    <g filter="url(#shadow)">
+      <!-- Outer Glowing Chamfered Octagon Border -->
+      <polygon points="617,110 763,110 790,137 790,283 763,310 617,310 590,283 590,137" fill="none" class="card-border" stroke="#00F2FE" stroke-width="3" />
+      
+      <!-- Inner Dark Octagon Backdrop -->
+      <polygon points="620,115 760,115 785,140 785,280 760,305 620,305 595,280 595,140" fill="#070a14" stroke="#1e293b" stroke-width="2" />
+
+      <!-- Avatar Base64 Image clipped into Octagon -->
+      <image href="data:image/jpeg;base64,${b64}" x="590" y="110" width="200" height="200" clip-path="url(#cyberOctagonClip)" preserveAspectRatio="xMidYMid slice" />
+
+      <!-- Sci-Fi Corner Brackets HUD Accents -->
+      <path d="M 605 115 L 595 115 L 595 125" fill="none" stroke="#00F2FE" stroke-width="2.5" />
+      <path d="M 775 115 L 785 115 L 785 125" fill="none" stroke="#00F2FE" stroke-width="2.5" />
+      <path d="M 595 270 L 595 280 L 605 280" fill="none" stroke="#00F2FE" stroke-width="2.5" />
+      <path d="M 785 270 L 785 280 L 775 280" fill="none" stroke="#00F2FE" stroke-width="2.5" />
+
+      <!-- Glowing Tech Dots on Octagon Corners -->
+      <circle cx="595" cy="140" r="3" fill="#00F2FE" />
+      <circle cx="785" cy="140" r="3" fill="#a855f7" />
+      <circle cx="785" cy="280" r="3" fill="#ec4899" />
+      <circle cx="595" cy="280" r="3" fill="#00F2FE" />
     </g>
 
     <!-- FLOATING TECH SKILL BADGES -->
@@ -334,4 +357,4 @@ const svgContent = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 440
 </svg>`;
 
 fs.writeFileSync(targetSvgPath, svgContent, 'utf8');
-console.log('Successfully generated SVG banner file at ' + targetSvgPath);
+console.log('Successfully updated header-banner.svg with Cyber Octagon Frame!');

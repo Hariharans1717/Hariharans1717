@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 64" width="100%" height="64">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@800;900&amp;display=swap');
+
+      .title-text {
+        font-family: 'Outfit', sans-serif;
+        font-size: 20px;
+        font-weight: 900;
+        letter-spacing: 1.5px;
+      }
+
+      @keyframes shift {
+        0% { stop-color: #a855f7; }
+        50% { stop-color: #ec4899; }
+        100% { stop-color: #a855f7; }
+      }
+
+      @keyframes dashLine {
+        from { stroke-dashoffset: 0; }
+        to { stroke-dashoffset: -40; }
+      }
+    </style>
+
+    <linearGradient id="grad_header-experience" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#a855f7">
+        <animate attributeName="stop-color" values="#a855f7; #ec4899; #a855f7" dur="4s" repeatCount="indefinite" />
+      </stop>
+      <stop offset="100%" stop-color="#ec4899">
+        <animate attributeName="stop-color" values="#ec4899; #a855f7; #ec4899" dur="4s" repeatCount="indefinite" />
+      </stop>
+    </linearGradient>
+
+    <linearGradient id="bg_header-experience" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#090d16"/>
+      <stop offset="100%" stop-color="#111728"/>
+    </linearGradient>
+
+    <clipPath id="clip">
+      <rect width="850" height="64" rx="14" ry="14"/>
+    </clipPath>
+  </defs>
+
+  <g clip-path="url(#clip)">
+    <rect width="850" height="64" fill="url(#bg_header-experience)"/>
+    <rect x="1.5" y="1.5" width="847" height="61" rx="13" ry="13" fill="none" stroke="url(#grad_header-experience)" stroke-width="1.5" stroke-opacity="0.8"/>
+    
+    <!-- Accent Bar -->
+    <rect x="25" y="18" width="5" height="28" rx="2.5" fill="url(#grad_header-experience)"/>
+
+    <text x="44" y="40" class="title-text" fill="url(#grad_header-experience)">💼 CURRENT EXPERIENCE</text>
+
+    <line x1="25" y1="54" x2="825" y2="54" stroke="url(#grad_header-experience)" stroke-width="1.5" stroke-opacity="0.3" stroke-dasharray="8 8"/>
+  </g>
+</svg>

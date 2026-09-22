@@ -1,0 +1,103 @@
+const fs = require('fs');
+
+const targetPath = 'c:\\Users\\harij\\Desktop\\github_profile\\Hariharans1717\\assets\\about-card.svg';
+
+const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 360" width="100%" height="100%">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap');
+
+      .mono { font-family: 'Fira Code', monospace; }
+      .body-font { font-family: 'Plus Jakarta Sans', sans-serif; }
+
+      @keyframes borderGlow {
+        0% { stroke: #38bdf8; }
+        50% { stroke: #a855f7; }
+        100% { stroke: #38bdf8; }
+      }
+
+      @keyframes blink {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0; }
+      }
+
+      .term-border { animation: borderGlow 6s infinite linear; }
+      .cursor-anim { animation: blink 1s infinite; }
+    </style>
+
+    <linearGradient id="termBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#090d16"/>
+      <stop offset="100%" stop-color="#050711"/>
+    </linearGradient>
+
+    <linearGradient id="headerGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#1e293b"/>
+    </linearGradient>
+
+    <clipPath id="cardClip">
+      <rect width="850" height="360" rx="16" ry="16"/>
+    </clipPath>
+
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="10" stdDeviation="12" flood-color="#000000" flood-opacity="0.6"/>
+    </filter>
+  </defs>
+
+  <g clip-path="url(#cardClip)" filter="url(#shadow)">
+    <!-- Terminal Background -->
+    <rect width="850" height="360" fill="url(#termBg)"/>
+
+    <!-- Terminal Header Bar -->
+    <rect width="850" height="42" fill="url(#headerGrad)"/>
+    <line x1="0" y1="42" x2="850" y2="42" stroke="#334155" stroke-width="1"/>
+
+    <!-- Window Buttons -->
+    <circle cx="24" cy="21" r="6" fill="#ef4444"/>
+    <circle cx="44" cy="21" r="6" fill="#f59e0b"/>
+    <circle cx="64" cy="21" r="6" fill="#10b981"/>
+
+    <!-- Window Title -->
+    <text x="425" y="26" text-anchor="middle" class="mono" font-size="13" font-weight="600" fill="#94a3b8">⚡ hariharan.config.js</text>
+
+    <!-- Border Glow -->
+    <rect x="1.5" y="1.5" width="847" height="357" rx="15" fill="none" class="term-border" stroke="#38bdf8" stroke-width="1.5" stroke-opacity="0.7"/>
+
+    <!-- Code Block Contents -->
+    <g transform="translate(30, 75)" class="mono" font-size="13.5" font-weight="500">
+      <!-- Line 1 -->
+      <text x="0" y="0"><tspan fill="#f43f5e">const</tspan> <tspan fill="#38bdf8">hariharan</tspan> <tspan fill="#e2e8f0">=</tspan> <tspan fill="#e2e8f0">{</tspan></text>
+
+      <!-- Line 2 -->
+      <text x="24" y="26"><tspan fill="#a855f7">pronouns</tspan><tspan fill="#e2e8f0">:</tspan> <tspan fill="#34d399">"He / Him"</tspan><tspan fill="#e2e8f0">,</tspan></text>
+
+      <!-- Line 3 -->
+      <text x="24" y="52"><tspan fill="#a855f7">role</tspan><tspan fill="#e2e8f0">:</tspan> <tspan fill="#34d399">"Software Engineer Intern &amp; Full-Stack AI Developer"</tspan><tspan fill="#e2e8f0">,</tspan></text>
+
+      <!-- Line 4 -->
+      <text x="24" y="78"><tspan fill="#a855f7">education</tspan><tspan fill="#e2e8f0">:</tspan> <tspan fill="#e2e8f0">{</tspan></text>
+      <text x="48" y="104"><tspan fill="#38bdf8">degree</tspan><tspan fill="#e2e8f0">:</tspan> <tspan fill="#34d399">"B.Tech in Information Technology (8.5 CGPA)"</tspan><tspan fill="#e2e8f0">,</tspan></text>
+      <text x="48" y="130"><tspan fill="#38bdf8">college</tspan><tspan fill="#e2e8f0">:</tspan> <tspan fill="#34d399">"Nandha Engineering College, Erode"</tspan><tspan fill="#e2e8f0">,</tspan></text>
+      <text x="48" y="156"><tspan fill="#38bdf8">award</tspan><tspan fill="#e2e8f0">:</tspan> <tspan fill="#fbbf24">"🏆 Best Outgoing Student Award (Diploma CS 2025)"</tspan></text>
+      <text x="24" y="182"><tspan fill="#e2e8f0">},</tspan></text>
+
+      <!-- Line 5 -->
+      <text x="24" y="208"><tspan fill="#a855f7">currentFocus</tspan><tspan fill="#e2e8f0">:</tspan> <tspan fill="#e2e8f0">[</tspan><tspan fill="#34d399">"MERN / PERN Stack"</tspan><tspan fill="#e2e8f0">, </tspan><tspan fill="#34d399">"AI Prompt Eng"</tspan><tspan fill="#e2e8f0">, </tspan><tspan fill="#34d399">"Cloud Databases"</tspan><tspan fill="#e2e8f0">],</tspan></text>
+
+      <!-- Line 6 -->
+      <text x="24" y="234"><tspan fill="#a855f7">passions</tspan><tspan fill="#e2e8f0">:</tspan> <tspan fill="#e2e8f0">[</tspan><tspan fill="#34d399">"AI Automation"</tspan><tspan fill="#e2e8f0">, </tspan><tspan fill="#34d399">"Social Impact Tech"</tspan><tspan fill="#e2e8f0">, </tspan><tspan fill="#34d399">"Scalable Architecture"</tspan><tspan fill="#e2e8f0">],</tspan></text>
+
+      <!-- Line 7 -->
+      <text x="24" y="260"><tspan fill="#a855f7">funFact</tspan><tspan fill="#e2e8f0">:</tspan> <tspan fill="#fbbf24">"I transform complex challenges into sleek digital products! 🚀"</tspan></text>
+
+      <!-- Line 8 -->
+      <text x="0" y="286"><tspan fill="#e2e8f0">};</tspan></text>
+      
+      <!-- Blinking Cursor -->
+      <rect x="35" y="274" width="8" height="16" fill="#38bdf8" class="cursor-anim" />
+    </g>
+  </g>
+</svg>`;
+
+fs.writeFileSync(targetPath, svg, 'utf8');
+console.log('Successfully generated about-card.svg');
